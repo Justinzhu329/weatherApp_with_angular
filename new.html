@@ -1,0 +1,21 @@
+<div ng-controller="parent2Controller as parent2vm">
+   
+   {{ parent2vm.message }};
+   
+    <div ng-controller="child2Controller as child2vm">
+        {{ parent2vm.message }};
+        <br>
+        {{ child2vm.message }};
+        <br>
+        <input type="text" ng-model="parentv2.message"></input>
+    </div>
+</div>
+<script>
+    myApp.Controller('parent2Controller', [function(){
+        this.message = "Parent Message";
+    }]);
+    
+    myApp.Controller('parent2Controller', [function(){
+        this.message = "Child Message";
+    }]);
+</script>
